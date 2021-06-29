@@ -7,6 +7,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { SharedModule } from './components/shared/shared.module';
 //Firebase
 import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 //Toastr
@@ -27,7 +28,8 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
     AngularFireAuthModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    DashboardModule
+    DashboardModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

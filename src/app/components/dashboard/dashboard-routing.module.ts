@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListCuestionariosComponent } from './list-cuestionarios/list-cuestionarios.component';
 import { CrearQuizzComponent } from './crear-quizz/crear-quizz.component';
 import { CrearPreguntaComponent } from './crear-pregunta/crear-pregunta.component';
+import { VerCuestionarioComponent } from './ver-cuestionario/ver-cuestionario.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:'crearPreguntas',
     component:CrearPreguntaComponent
+  },
+  {
+    path:'verCuestionario/:id',
+    component:VerCuestionarioComponent
   }
   
 ];

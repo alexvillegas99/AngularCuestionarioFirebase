@@ -1,4 +1,5 @@
-<div class="container mt-5">
+<div class="contenedor">
+    <div class="container">
     <div class="d-flex justify-content-center mt-5" *ngIf="loading">
         <app-spinner></app-spinner>
     </div>
@@ -36,7 +37,7 @@
                     </form>
                     <br>
                     <div class="text-center">
-                        <a [routerLink]="['//usuario/registro']" routerLinkActive="router-link-active" >Registrarse</a>
+                        <a [routerLink]="['/usuario/registro']" routerLinkActive="router-link-active" >Registrarse</a>
                         <br>
                         <a [routerLink]="['/usuario/recuperarPassword']" routerLinkActive="router-link-active" >Recuperar Contraseña</a>
                     </div>
@@ -44,4 +45,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

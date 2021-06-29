@@ -1,7 +1,10 @@
-<div class="contenedor">
+<div class="contenedor" *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
+<div class="contenedor" *ngIf="!loading">
 
     <div *ngIf="error" class="alert alert-danger" role="alert">
-        <strong>Por favor ingrese un PIN</strong>
+        <strong>{{errorText}}</strong>
       </div>
       <label class="label mb-3"> Ingresa el pin de tú cuestionario.</label>
     <input type="text" [(ngModel)]="pin" class="form-control input-ingresar mb-3" placeholder="PIN">

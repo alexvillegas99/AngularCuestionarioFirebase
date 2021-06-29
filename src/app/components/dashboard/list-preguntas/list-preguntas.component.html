@@ -1,1 +1,34 @@
-<p>list-preguntas works!</p>
+<div class="d-flex justify-content-center mt-5" *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
+<div *ngIf="listPreguntas.length>0 && !loading" class="row mt-3" >
+    <div class="col-lg-8 offset-lg-2">
+        <div *ngFor="let pregunta of listPreguntas ; let i =index" class="card mb-3">
+            <div class="card-body text-center">
+                <p class="titulo-pregunta">{{pregunta.titulo}}</p>
+                <div class="row">
+                    <div class="col-6">
+                        <p><span class="badge bg-dark">{{pregunta.segundos}} s</span></p>
+                    </div>
+                    <div class="col-6">
+                        <p><span class="badge bg-dark">{{pregunta.puntos}} puntos</span></p>
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <li *ngFor="let respuesta of pregunta.listRespuestas" class="list-group-item"
+                        [ngClass]="{'correcta': respuesta.esCorrecta}">
+                        {{respuesta.descripcion}}
+                    </li>
+                </ul>
+                <div>
+                    <i (click)="eliminarPregunta(i)" class="fas fa-trash"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <button style="width: 100%; font-size: 20px;" (click)="finalizarCuestionario()" class="btn-principal">FINALIZAR CUESTIONARIO</button>
+            </div>
+        </div>
+    </div>
+</div>
